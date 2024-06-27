@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class hallow 
+{
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+          Scanner scan = new Scanner(System.in);
+         int n=scan.nextInt();
+         int ar[]=new int[n];
+         for(int i=0;i<n;i++){
+            ar[i]=scan.nextInt();
+         }
+         Arrays.sort(ar);
+         System.out.println(solution.namename(ar));
+         }
+        }
+class Solution{
+    public String namename(int [] ar){
+        String output ="";
+       for(int i=0;i<ar.length;i++) {
+           for(int j=i+1;j<ar.length;j++){
+               String xy = ar[i]+""+ar[j];
+               String yx=ar[j]+""+ar[i];
+               if(Integer.parseInt(xy)<Integer.parseInt(yx)){
+                 int t=ar[i];
+                 ar[i]=ar[j];
+                 ar[j]=t;
+            }           
+       }
+     }
+     for(int i=0;i<ar.length;i++){
+         output=output +ar[i];
+         }
+    return output;
+    }
+    }
+  
